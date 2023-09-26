@@ -21,7 +21,7 @@ npm run dev
 
 For Backend I used an ORM named PrismaDB.
 
-I managed our CRUD REST functionalities by using SSR of NextJS.
+I managed our CRUD REST requiriments by using SSR of NextJS, you can take a look at app/api/tasks folder.
 
 For Database MongoDB, I created an instance in the cloud, so if you want to test the app locally, you can create your instance and connect it or connect via cloud from Atlas https://www.mongodb.com/atlas/database, just edit the .env DATABASE_URL=<AND PUT HERE THE GIVEN URL HERE>.
 
