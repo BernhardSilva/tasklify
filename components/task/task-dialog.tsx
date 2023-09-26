@@ -31,6 +31,7 @@ const TaskDialog = ({ initialData }: TaskDialogProps) => {
         initialData,
         onSubmitSuccess: () => {
             router.refresh()
+            form.reset()
             toast({
                 title: "Task saved!."
             })
