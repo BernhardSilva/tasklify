@@ -1,4 +1,4 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+
 
 ## Getting Started
 
@@ -18,6 +18,7 @@ Then npx prisma generate
 
 npm run dev
 ```
+This was made using NextJS13.5.2 Router.
 
 For Backend I used an ORM named PrismaDB.
 
