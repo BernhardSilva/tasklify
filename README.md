@@ -5,13 +5,50 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 First, run the development server:
 
 ```bash
+npm install
+# or
+yarn install
+# or
+pnpm install
+# or
+bun install
+
+Then npx prisma generate
+     npx prisma db push
+
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+```
+
+For Backend I used an ORM named PrismaDB.
+
+I managed our CRUD REST functionalities by using SSR of NextJS.
+
+For Database MongoDB, I created an instance in the cloud, so if you want to test the app locally, you can create your instance and connect it or connect via cloud from Atlas https://www.mongodb.com/atlas/database, just edit the .env DATABASE_URL=<AND PUT HERE THE GIVEN URL HERE>.
+
+You must to create an account to https://clerk.com/, It's a third-party service for authentication, so you must to enter this 5 .env if you want to run locally with your own users.
+CLERK_SECRET_KEY=<AND PUT HERE THE GIVEN SECRET KEY>
+
+This 5 .env left NEED to keep their values, copy it into your .env too.
+
+NEXT_PUBLIC_CLERK_SIGN_IN_URL=/sign-in
+NEXT_PUBLIC_CLERK_SIGN_UP_URL=/sign-up
+NEXT_PUBLIC_CLERK_AFTER_SIGN_IN_URL=/
+NEXT_PUBLIC_CLERK_AFTER_SIGN_UP_URL=/
+
+For Frontend I use SHADCN UI, it provides components you can easily insert into your app and are completely customisable, themeable.
+For frontend framework I used TailwindCSS.
+
+I created only 1 Collection in MongoDB, because Clerk provides your own user, so if you try the app, you can have different "Tasks" from other users.
+
+This app was made using TypeScript and it wasn't necessary a global state manager for the persistence.
+
+For cache I used the default, that comes with Nextjs. That's why the app is faster than a REACT APP.
+
+Just in case run again the next 3 commands
+```
+npx prisma generate
+npx prisma db push
+npm run dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
