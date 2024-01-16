@@ -2,12 +2,21 @@ import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/componen
 import { Task } from '@/types/task';
 import TaskForm from './task-form';
 import { Badge } from '../ui/badge';
+import { useEffect, useState } from 'react';
 
 type TaskCardProps = {
 	task: Task;
 };
 
 const TaskCard = (props: TaskCardProps) => {
+	const [isClient, setIsClient] = useState(false);
+
+	useEffect(() => {
+		setIsClient(true);
+	}, []);
+
+	if (!isClient) return null;
+
 	return (
 		<Card className='w-[350px] m-2'>
 			<CardHeader>
