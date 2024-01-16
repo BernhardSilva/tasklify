@@ -1,7 +1,7 @@
 "use client"
 
 import { Task } from '@/types/task'
-import TaskDialog from './task/task-dialog'
+import TaskDialog from './task/task-form'
 import TaskList from './task/task-list'
 
 type HomeProps = {
