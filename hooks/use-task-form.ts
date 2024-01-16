@@ -1,11 +1,10 @@
+import { toastError, toastSaved } from '@/helpers/toast-messages';
 import { Task } from '@/types/task';
 import { zodResolver } from '@hookform/resolvers/zod';
 import axios from 'axios';
 import { useState } from 'react';
 import { UseFormReturn, useForm } from 'react-hook-form';
 import { z } from 'zod';
-import { toast } from './use-toast';
-import { ToastAction } from '@/components/ui/toast';
 
 const formSchema = z.object({
 	title: z.string().min(1, {
@@ -45,23 +44,15 @@ export function useTaskForm({ formValues, onSubmitSuccess }: TaskFormProps): Tas
 			if (formValues) {
 				await axios.patch(`/api/tasks/${formValues?.id}`, data);
 				onSubmitSuccess?.();
-				toast({
-					title: 'Task updated!.'
-				});
+				toastSaved();
 			} else {
 				await axios.post(`/api/tasks/`, data);
 				onSubmitSuccess?.();
-				toast({
-					title: 'Task added!.'
-				});
+				toastSaved();
 			}
 		} catch (error) {
 			console.error(error);
-			toast({
-				variant: 'destructive',
-				title: 'Uh oh! Something went wrong.',
-				description: 'There was a problem with your request.'
-			});
+			toastError();
 		} finally {
 			setLoading(false);
 		}
@@ -74,6 +65,7 @@ export function useTaskForm({ formValues, onSubmitSuccess }: TaskFormProps): Tas
 			onSubmitSuccess?.();
 		} catch (error) {
 			console.error(error);
+			toastError();
 		} finally {
 			setLoading(false);
 		}
