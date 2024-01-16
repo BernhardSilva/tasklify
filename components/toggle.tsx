@@ -31,7 +31,7 @@ export function Toggle({ value, onChange, className }: ToggleProps) {
 						} rounded-full`}
 					>
 						{checked && (
-							<svg className='w-6 h-6 text-white pointer-events-none' viewBox='0 0 16 16' fill='currentColor'>
+							<svg className='w-6 h-6 text-white pointer-events-none ml-1 mt-1' viewBox='0 0 16 16' fill='currentColor'>
 								<path d='M6 10.75L2.75 7.5l1.5-1.5 1.75 1.75L10.25 3l1.5 1.5L6 10.75z' />
 							</svg>
 						)}

@@ -34,12 +34,7 @@ const TaskForm = ({ formValues }: TaskFormProps) => {
 		onSubmitSuccess: () => {
 			router.refresh();
 			form.reset();
-			const condition = true;
-
-			if (condition) {
-				// If the condition is true, close the dialog
-				setOpen(false);
-			}
+			setOpen(false);
 		}
 	});
 
